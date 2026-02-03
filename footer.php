@@ -1,23 +1,3 @@
-    <!-- ================== Footer Section ================== -->
-
-<footer class="footer-area">
-  <div class="container">
-    <div class="legal-links" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;font-size:14px;">
-      <a href="/privacy.php"  style="color:goldenrod;">Privacy Policy</a>
-      <span style="opacity:.5;">•</span>
-      <a href="/terms.php"    style="color:goldenrod;">Terms &amp; Conditions</a>
-      <span style="opacity:.5;">•</span>
-      <a href="/security.php" style="color:goldenrod;">Security</a>
-      <span style="opacity:.5;">•</span>
-      <a href="/data-processing.php" style="color:goldenrod;">Data Processing</a>
-    </div>
-    <p style="text-align:center;margin-top:10px;font-size:13px;opacity:.85;">
-      © <?= date('Y'); ?> Swift Designs Studio LLC. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-
     <!-- ================== JavaScript Files ================== -->
     <!-- Core Libraries -->
     <script src="js/jquery-3.2.1.min.js"></script>
