@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="contact-card">
           <div class="icon-wrap"><i class="fa-solid fa-phone"></i></div>
           <h4>Phone</h4>
-          <p><a href="tel:6198384459">619-838-4459</a></p>
+          <p><a href="tel:3344564667">334-456-4667</a></p>
         </div>
 
         <div class="contact-card">
@@ -103,10 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <h4>Social Media</h4>
           <div class="social-icons">
             <a href="https://linkedin.com/in/coreyshamburger"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/CTSham"><i class="fa-brands fa-github"></i></a>
-            <a href="https://instagram.com/swiftdesigns.studio"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://tiktok.com/@swiftdesigns.studio"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://facebook.com/swiftdesigns.studio"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://github.com/SwiftDesignsStudio"><i class="fa-brands fa-github"></i></a>
           </div>
         </div>
       </div>
