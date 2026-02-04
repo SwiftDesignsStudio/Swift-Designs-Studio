@@ -1,6 +1,13 @@
 <?php
 // --- contact.php ---
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer/src/Exception.php';
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
+
 // Start session BEFORE any output
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -55,6 +62,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
 
         file_put_contents($csv, implode(',', $quoted) . PHP_EOL, FILE_APPEND);
+
+                // --- SEND EMAIL ---
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'info@swiftdesignsstudio.com';
+            $mail->Password   = 'kedt pvhk plig whls';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            $mail->setFrom('info@swiftdesignsstudio.com', 'Swift Designs Studio');
+            $mail->addAddress('info@swiftdesignsstudio.com');
+            $mail->addReplyTo($old['email'], $old['name']);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'New Contact Form Submission';
+            $mail->Body = "
+                <strong>Name:</strong> {$old['name']}<br>
+                <strong>Email:</strong> {$old['email']}<br><br>
+                <strong>Message:</strong><br>
+                " . nl2br(htmlspecialchars($old['message'])) . "
+            ";
+
+            $mail->send();
+        } catch (Exception $e) {
+            error_log('Mail error: ' . $mail->ErrorInfo);
+        }
 
         // Flash message + redirect to avoid resubmission
         $_SESSION['flash'] = 'Thanks, your message was sent!';
