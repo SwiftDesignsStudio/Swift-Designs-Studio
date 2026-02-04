@@ -70,12 +70,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'info@swiftdesignsstudio.com';
+            $mail->Username   = 'corey@swiftdesignsstudio.com';
             $mail->Password   = 'kedtpvhkpligwhls';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
-            $mail->setFrom('info@swiftdesignsstudio.com', 'Swift Designs Studio');
+            $mail->setFrom('corey@swiftdesignsstudio.com', 'Swift Designs Studio');
             $mail->addAddress('info@swiftdesignsstudio.com');
             $mail->addReplyTo($old['email'], $old['name']);
 
